@@ -1,0 +1,17 @@
+deutschland:
+    cost: 800
+    tax: 20
+    label: EUR
+    name: DEUTSCHLAND
+poland:
+    cost: 1200
+    tax: 19
+    label: PLN
+    name: POLAND
+england:
+    tax: 25
+    cost: 600
+    label: GBP
+    name: ENGLAND
+nbp:
+    url: http://api.nbp.pl/api/exchangerates/rates/a/%s/

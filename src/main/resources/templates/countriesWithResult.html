@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8">
+        <title>MONEY APP</title>
+    </head>
+    <body>
+    <p>Gross price (daily) > Net price in PLN (monthly)</p>
+    <table>
+        <tr th:each="country: ${wrapper.countries}">
+            <td th:text="${country.name}"/></td>
+            <td th:text="${country.grossPrice}"/></td>
+            <td th:text="${country.label}" />
+            <td>></td>
+            <td th:text="${country.netPrice}"/></td>
+            <td>PLN</td>
+        </tr>
+    </table>
+    </body>
+</html>

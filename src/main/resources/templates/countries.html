@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8">
+        <title>MONEY APP</title>
+    </head>
+    <body>
+    <p>Input gross price</p>
+        <form method="post" th:object="${wrapper}" th:action="@{/app/money/result}">
+            <table>
+                <tr th:each="country, item: *{countries}">
+                    <td th:text="*{countries[__${item.index}__].name}" />
+                    <td><input type="text" th:field="*{countries[__${item.index}__].grossPrice}"/></td>
+                    <td th:text="*{countries[__${item.index}__].label}" />
+                    <td><input type="hidden" th:field="*{countries[__${item.index}__].label}" th:value="${country.getLabel()}"/></td>
+                    <td><input type="hidden" th:field="*{countries[__${item.index}__].name}" th:value="${country.getName()}"/></td>
+                    <td><input type="hidden" th:field="*{countries[__${item.index}__].tax}" th:value="${country.getTax()}"/></td>
+                    <td><input type="hidden" th:field="*{countries[__${item.index}__].cost}" th:value="${country.getCost()}"/></td>
+                </tr>
+            </table>
+            <button type="submit">Generate net price in PLN</button>
+        </form>
+    </body>
+</html>
