@@ -5,7 +5,8 @@
         <title>MONEY APP</title>
     </head>
     <body>
-    <p>Input gross price</p>
+    <h1>This app generates net price(monthly salary) for each country in PLN currency</h1>
+    <p>Input gross price for single day</p>
         <form method="post" th:object="${wrapper}" th:action="@{/app/money/result}">
             <table>
                 <tr th:each="country, item: *{countries}">
@@ -18,7 +19,7 @@
                     <td><input type="hidden" th:field="*{countries[__${item.index}__].cost}" th:value="${country.getCost()}"/></td>
                 </tr>
             </table>
-            <button type="submit">Generate net price in PLN</button>
+            <button type="submit">Generate net price in PLN for whole month</button>
         </form>
     </body>
 </html>
